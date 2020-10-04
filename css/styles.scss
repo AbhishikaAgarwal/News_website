@@ -7,7 +7,7 @@
 }
 
 body{
-    max-width: 1280px;
+    max-width: 100%;
     margin:auto;
     border-left: 1px solid rgba(0,0,0,0.2);
     border-right: 1px solid rgba(0,0,0,0.2);
@@ -15,6 +15,10 @@ body{
     font-family: 'Times New Roman', Times, serif;
     scroll-behavior: smooth;
     box-shadow: 0px 10px 10px rgba(241, 239, 239, 0.2);
+}
+section{
+    max-width: 1240px;
+    margin: 0 auto;
 }
 .header{
     min-height:20vh;
@@ -105,6 +109,7 @@ nav{
         font-size: 4em;
         font-family: 'Sansita Swashed', cursive;
         text-align: center;
+        cursor: pointer;
     }
     .news__header-bottom{
         display: flex;
@@ -233,6 +238,7 @@ section.news__pinposts{
             right: 0;
             bottom: 0;
             background: url('../src/news_img1.jpg');
+            overflow: hidden;
             z-index: -1;
             background-repeat: no-repeat;
             background-position: center;
@@ -243,7 +249,18 @@ section.news__pinposts{
             width: 100%;
             padding: 10px;
             background-color: rgba(0,0,0,0.5);
-
+            
+            h3{
+                width: 80%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-family: 'Open Sans',sans-serif;
+                margin: 13px 0 10px 0;
+                color: #FFFFFF;
+                font-size: 24px;
+                font-weight: 300;
+            }
             small{
                 font-size: 10px;
             }
@@ -264,6 +281,10 @@ section.news__pinposts{
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+
+        .form-group textarea{
+            padding: 3px 5px !important; 
+        }
     }
     .form-container .form-group{
         width: 70%;
@@ -279,6 +300,7 @@ section.news__pinposts{
         label{
             margin-right: 2em;
         }
+        
     }
     .form-submit{
         padding: 0.5rem 1rem;
@@ -352,6 +374,21 @@ section.news__pinposts{
         ;
     }
 }
+// @media screen and (max-width: 620px) {
+//     .news__home_main{
+//         width: 100%;
+//         grid-template-columns: 1fr;
+//         grid-gap: 1rem;
+//         grid-template-areas:
+//             "main-tranding" "
+//             signup"
+//             "popular"
+//             "comment"
+//             "latest"
+//             "tranding"
+//         ;
+//     }
+// }
 
 .space{
     height: 100px;
@@ -362,6 +399,8 @@ section.news__pinposts{
     color: #222;
     letter-spacing: 1.5px;
     font-family: 'Sansita Swashed', cursive;
+    border-bottom: 1px solid #000;
+    margin: 0 2rem 2rem 2rem;
 }
 
 .news_links{
@@ -447,7 +486,7 @@ section.news__pinposts{
 
 /* Footer Content */
 footer{
-    background: rgba(0, 0, 0, 1);
+    background: #09394f;
     border-top: 8px solid #222;
 }
 .our-story-card{
@@ -459,7 +498,7 @@ footer{
     color: white;
 }
 .footer-card {
-    max-width: 90%;
+    // max-width: 90%;
     margin: 0 auto;
 }
 
@@ -467,8 +506,7 @@ footer{
     margin-top: 0;
     min-width: 190px;
     width: 100%;
-    margin-top: 80px;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     font-size: 1em;
     color: #757575;
     position: relative;
@@ -488,10 +526,10 @@ footer{
     display: block;
     height: 60px;
     font-size: 1.2rem;
-    color: #757575;
+    color: #fff;
 }
 .site-footer a{
-    color: #757575;
+    color: #fff;
     text-decoration: none;
 }
 .footer-links{
@@ -499,17 +537,18 @@ footer{
     grid-template-columns: repeat(auto-fit, minmax(200px,auto));
     grid-auto-rows: auto;
     grid-column-gap: 1rem;
-    color: #757575;
+    color: #fff;
     list-style: none;
 }
-
+.footer-country{
+    padding: 1rem 2rem;
+}
 .footer-links>li{
     padding-top: 1rem;
-    text-align: right;
+    text-align: left;
+    padding-left: 2rem;
 }
-.site-footer .footer-country{
-    margin: 4rem 0;
-}
+
 
 .footer-text{
     display: flex;
@@ -520,7 +559,6 @@ footer{
     text-align: center;
     /* margin: 1rem auto; */
 }
-
 @media (max-width:780px) {
     .footer-links{
         grid-template-columns: repeat(2,1fr);

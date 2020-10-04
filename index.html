@@ -147,16 +147,15 @@
 
     <section class="news__home_main">
         <div class="news__home_main-tranding" id="tranding-news">
-            
             <div class="bg-image">
 
             </div>
-            <div class="news-content" style="color: rgba(255,255,255,1);">
+            <div class="news-content" id="trending-news-content" style="color: rgba(255,255,255,1);">
                 <h3>This is heading of tranding news</h3>
                 <small>Friday, 02 October 2020</small>
             </div>
-            <i class="fas fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-left prev"></i>
+            <i class="fas fa-chevron-right next"></i>
         </div>
         <div class="news__home_main-signup">
             <form action="" class="form-container">
@@ -177,11 +176,11 @@
             <form action="" class="form-container">
                 <div class="form-group">
                     <label for="username">Name</label>
-                    <input type="text" id="username">
+                    <input type="text" id="commentUsername">
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="number" id="email">
+                    <input type="number" id="phoneNumber">
                 </div>     
                 
                 <div class="form-group">
@@ -299,12 +298,14 @@
             </ul>
         </div>
     </section>
-    
-    <div class="space" >
-        <div class="section-heading">
-            Categories
+    <section>
+        <div class="space" >
+            <div class="section-heading">
+                Categories
+            </div>
         </div>
-    </div>
+    </section>
+    <section>
     <div class="news_links">
         <div class="news_category">
             <div class="title">
@@ -491,10 +492,11 @@
         </div>
         
     </div>
-
     <div class="space">
 
     </div>
+    </section>
+    <section>
     <div class="innerNewsList">
         <div class="inner-col1">
             <div class="news__inner-item">
@@ -551,11 +553,14 @@
             </div>
         </div>
     </div>
-
+    </section>
 
     <footer>
+    
         <div class="our-story-card card-contents footer-card ">
+            <section>
             <div class="site-footer-wrapper centered dark">
+                
                 <div class="footer-divider">
 
                 </div>
@@ -633,9 +638,16 @@
                         &copy; Copyright Subhash Chandra
                     </span>
                 </div>
+
+                
             </div>
+            
             <!-- <div class="center-pixel" style="position:absolute"></div> -->
         </div>
+        </section> 
     </footer>
+
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
