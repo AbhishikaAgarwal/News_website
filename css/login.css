@@ -18,7 +18,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: -webkit-gradient(linear, left top, right bottom, from(#5578ff), color-stop(#9479ff), to(#4d3c90));
+  background: linear-gradient(to bottom right, #5578ff, #9479ff, #4d3c90);
   font-family: "Sansita", sans-serif;
 }
 
@@ -27,7 +28,9 @@ body {
   height: 500px;
   width: 95%;
   border: 2px solid rgba(0, 0, 0, 0.6);
+  background: #fff;
   padding: 1em;
+  border-radius: 8px;
 }
 
 .container form {
