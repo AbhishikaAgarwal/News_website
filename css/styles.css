@@ -17,6 +17,7 @@ body {
   scroll-behavior: smooth;
   -webkit-box-shadow: 0px 10px 10px rgba(241, 239, 239, 0.2);
           box-shadow: 0px 10px 10px rgba(241, 239, 239, 0.2);
+  min-width: 340px;
 }
 
 section {
@@ -62,6 +63,12 @@ nav {
 
 .nav-links {
   margin-left: auto;
+}
+
+@media screen and (max-width: 620px) {
+  .nav-links li {
+    display: none;
+  }
 }
 
 .navbar ul li {
@@ -117,7 +124,7 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-width: 200px;
+  min-width: 100px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -133,6 +140,12 @@ nav {
 
 .news__header-home .news__header-top .news__header-searchbar .fa-search {
   margin-left: 10px;
+}
+
+.news__header-home .news__header-top .news__header-language #language {
+  display: none;
+  border: none;
+  padding: 5px 14px;
 }
 
 .news__header-home .news__header-top .language_link {
@@ -171,6 +184,15 @@ nav {
 
 .news__header-home .news__header-bottom .current_date {
   color: #f2f2f2;
+}
+
+@media screen and (max-width: 720px) {
+  .news__header-language .big-screeb-links {
+    display: none;
+  }
+  .news__header-language #language {
+    display: block !important;
+  }
 }
 
 section.news__pinposts {
@@ -329,7 +351,6 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
 .news__home_main .news__home_main-tranding .news-content h3 {
   width: 80%;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
   font-family: 'Open Sans',sans-serif;
   margin: 13px 0 10px 0;
@@ -369,9 +390,6 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -382,7 +400,7 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
 }
 
 .news__home_main .form-container .form-group {
-  width: 70%;
+  width: 100%;
   margin-bottom: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -407,15 +425,18 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
 }
 
 .news__home_main .form-submit {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 4rem;
   outline: none;
   border: none;
   color: #999;
   background-color: #111111;
   border-radius: 0.4rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin: 0 6.4em;
+  float: right;
+  margin-right: 0;
+}
+
+.news__home_main .form-submit:hover {
+  background: #000;
 }
 
 .news__home_main .news__home_main-latest-news {
@@ -491,6 +512,31 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
         grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
         grid-template-areas: "main-tranding  signup" "popular  comment" "latest tranding";
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .news__home_main {
+    width: 100%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "main-tranding" "signup" "comment" "popular" "latest" "tranding";
+  }
+  .news__home_main .form-container .form-group {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .news__home_main .form-container .form-group label {
+    margin-right: 50px;
   }
 }
 
@@ -614,6 +660,17 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
 .innerNewsList .news__inner-item .inner_news-content .description {
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 740px) {
+  .innerNewsList {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 /* Footer Content */

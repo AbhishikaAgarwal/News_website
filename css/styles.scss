@@ -15,6 +15,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
     scroll-behavior: smooth;
     box-shadow: 0px 10px 10px rgba(241, 239, 239, 0.2);
+    min-width: 340px;
 }
 section{
     max-width: 1240px;
@@ -49,7 +50,13 @@ nav{
     font-size: 14px;
 }
 .nav-links{
-    margin-left: auto;   
+    margin-left: auto;  
+    
+    @media screen and (max-width:620px){
+        li{
+            display: none;
+        }
+    }
 }
 .navbar {
     ul li{
@@ -87,7 +94,7 @@ nav{
         
         .news__header-searchbar{
             display: flex;
-            min-width: 200px;
+            min-width: 100px;
             justify-content: space-between;
             align-items: center;
             // border: 1px solid rgba(0,0,0,0.4);
@@ -98,6 +105,14 @@ nav{
             }
             .fa-search{
                 margin-left: 10px;
+            }
+        }
+        .news__header-language{
+
+            #language{
+                display:none;
+                border: none;
+                padding: 5px 14px;
             }
         }
         .language_link{
@@ -129,6 +144,16 @@ nav{
     }
 }
 
+@media screen and ( max-width:720px ){
+    .news__header-language{
+        .big-screeb-links{
+            display: none;
+        }
+        #language{
+            display:block !important;
+        }
+    }
+}
 
 // PIN - POSTS
 section.news__pinposts{
@@ -256,7 +281,6 @@ section.news__pinposts{
             h3{
                 width: 80%;
                 overflow: hidden;
-                white-space: nowrap;
                 text-overflow: ellipsis;
                 font-family: 'Open Sans',sans-serif;
                 margin: 13px 0 10px 0;
@@ -282,7 +306,7 @@ section.news__pinposts{
         grid-area: comment;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        // align-items: flex-start;
         justify-content: center;
 
         .form-group textarea{
@@ -290,7 +314,7 @@ section.news__pinposts{
         }
     }
     .form-container .form-group{
-        width: 70%;
+        width: 100%;
         margin-bottom: 0.5rem;
         display: flex;
         align-items:center;
@@ -306,14 +330,17 @@ section.news__pinposts{
         
     }
     .form-submit{
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 4rem;
         outline: none;
         border: none;
         color: #999;
         background-color: rgba(17,17,17,1);
         border-radius: 0.4rem;
-        justify-self: center;
-        margin: 0 6.4em;
+        float: right ;
+        margin-right: 0;
+        &:hover{
+            background: #000;
+        }
     }
     .news__home_main-latest-news{
         grid-area: latest;
@@ -375,6 +402,30 @@ section.news__pinposts{
             "popular  comment"
             "latest tranding"
         ;
+    }
+}
+@media screen and (max-width: 740px) {
+    .news__home_main{
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main-tranding"
+            "signup"
+            "comment"
+            "popular"
+            "latest"
+            "tranding";
+
+            .form-container .form-group{
+                width: 100%;
+                margin-bottom: 0.5rem;
+                display: flex;
+                align-items:center;
+                justify-content: space-between;
+                label{
+                    margin-right: 50px;
+                }
+            }
     }
 }
 // @media screen and (max-width: 620px) {
@@ -484,6 +535,13 @@ section.news__pinposts{
                 color: rgba(0,0,0,.6);
             }
         }
+    }
+}
+
+@media screen and (max-width : 740px) {
+    .innerNewsList{
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 }
 
