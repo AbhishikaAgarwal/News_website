@@ -24,6 +24,10 @@ section {
   margin: 0 auto;
 }
 
+a {
+  color: inherit;
+}
+
 .header {
   min-height: 20vh;
   overflow: hidden;
