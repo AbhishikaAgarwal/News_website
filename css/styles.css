@@ -71,6 +71,14 @@ nav {
   }
 }
 
+.navbar .days li i {
+  font-size: 24px;
+}
+
+.navbar .days li {
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
 .navbar ul li {
   color: #fff;
   padding: 0.2rem .85rem;
@@ -135,7 +143,9 @@ nav {
 
 .news__header-home .news__header-top .news__header-searchbar input.search {
   outline: none;
-  padding: 0.2rem 1rem;
+  padding: 0.4rem 1rem;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .news__header-home .news__header-top .news__header-searchbar .fa-search {
@@ -561,11 +571,11 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
 
 .news_links {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(340px, auto))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+  -ms-grid-columns: (minmax(360px, auto))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(360px, auto));
 }
 
 .news_links .news_category {
@@ -592,8 +602,7 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
           align-items: center;
   font-size: 1.2rem;
   font-weight: 800;
-  border-bottom: 2px solid #111319;
-  border-bottom-right-radius: 5px;
+  border-bottom: 1px solid #111319;
 }
 
 .news_links .news_category .title .fas {
@@ -604,12 +613,16 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
 
 .news_links .news_category li {
   margin-bottom: 10px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .news_links .news_category li a {
   color: #111319;
-  margin-left: 1rem;
-  font-size: 14px;
+  line-height: 1.4rem;
+  font-size: 18px;
+  font-style: italic;
+  text-transform: capitalize;
 }
 
 .news_links .news_category li a:hover {
@@ -618,6 +631,7 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
 
 .news_links .news_category li a .fas {
   margin-right: 10px;
+  display: none;
 }
 
 .innerNewsList {
@@ -635,8 +649,7 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
   display: -ms-flexbox;
   display: flex;
   padding: 1rem;
-  border-bottom: 2px solid #111319;
-  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   gap: 1rem;
 }
 

@@ -59,6 +59,14 @@ nav{
     }
 }
 .navbar {
+    .days{
+        li i{
+            font-size: 24px;
+        }
+        li{
+            border-right: 1px solid rgba(255,255,255,0.4);
+        }
+    }
     ul li{
         color: #fff;
         padding: 0.2rem .85rem;
@@ -101,7 +109,10 @@ nav{
             
             input.search{
                 outline: none;
-                padding: 0.2rem 1rem;
+                padding: 0.4rem 1rem;
+                background: rgba(0,0,0,0.18);
+                // background: transparent;
+                border: 1px solid rgba(255,255,255,0.8);
             }
             .fa-search{
                 margin-left: 10px;
@@ -459,9 +470,9 @@ section.news__pinposts{
 
 .news_links{
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(340px,auto));
+    grid-template-columns: repeat(auto-fit,minmax(360px,auto));
 
     .news_category{
         display: flex;
@@ -475,8 +486,8 @@ section.news__pinposts{
             align-items: center;
             font-size: 1.2rem;
             font-weight: 800;
-            border-bottom: 2px solid #111319;
-            border-bottom-right-radius: 5px;
+            border-bottom: 1px solid #111319;
+            // border-bottom-right-radius: 5px;
             .fas{
                 margin-bottom: 10px;
                 margin-right: 10px;
@@ -485,15 +496,22 @@ section.news__pinposts{
         }
         li{
             margin-bottom: 10px;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
             a{
                 color: #111319;
-                margin-left: 1rem;
-                font-size: 14px;
+                // margin-left: 1rem;
+                line-height: 1.4rem;
+                font-size: 18px;
+                font-style: italic;
+                text-transform: capitalize;
+
                 &:hover{
                     text-decoration: underline;
                 }
                 .fas{
                     margin-right: 10px;
+                    display: none;
                 }
             }
         }
@@ -511,8 +529,7 @@ section.news__pinposts{
         display: flex;
         // justify-items: center;
         padding: 1rem;
-        border-bottom: 2px solid #111319;
-        border-bottom-right-radius: 10px;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
         gap: 1rem;
         .inner_news-img{
             object-fit: cover;
