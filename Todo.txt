@@ -1,0 +1,13 @@
+1 . In category section : 6 in each page 
+2 . A left arrow to move next list of category
+
+
+->instead of giving that name, email and submit option, we can give that in subscribe pop up..  👍
+And that place can be used for any advertisement..  👍
+
+-> replace that name, email and submit section with an advertisement        👍
+-> Make a pop-up for subscribe  👍
+
+
+-> Replace that message section to a advertisement , and make it pop-up form    👍
+-> Make a pop-up on clicking on the contact us-page  👍
