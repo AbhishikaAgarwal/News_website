@@ -29,6 +29,104 @@ a {
   color: inherit;
 }
 
+/*
+Subscribe Section
+*/
+.subscribe-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+
+.subscribe-wrapper .subscribe_container {
+  width: 340px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 1rem;
+  position: relative;
+  -webkit-animation: fade 0.3s ease-in forwards;
+          animation: fade 0.3s ease-in forwards;
+  text-align: center;
+  font-family: 'Sansita Swashed', cursive;
+}
+
+.subscribe-wrapper .subscribe_container .subscribe__image {
+  max-width: 220px;
+  width: 100%;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.subscribe-wrapper .subscribe_container .subscribe__image img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.subscribe-wrapper .cross {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 2em;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.subscribe-wrapper .subscribe_button {
+  border: 1px solid #111318;
+  padding: 0.4rem 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.subscribe-wrapper .subscribe_btn-link {
+  background: #38d838;
+  color: #111318;
+  text-transform: uppercase;
+  margin: 15px auto;
+  display: block;
+}
+
+@-webkit-keyframes fade {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes fade {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
 .header {
   min-height: 20vh;
   overflow: hidden;
@@ -292,7 +390,7 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  grid-gap: 5em;
       grid-template-areas: "main-tranding main-tranding signup" "main-tranding main-tranding comment" "latest popular tranding";
 }
 
@@ -547,6 +645,32 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
   }
   .news__home_main .form-container .form-group label {
     margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .news__home_main #tranding-news .bg-image {
+    background-size: cover;
+  }
+  .news__home_main #tranding-news .news-content h3 {
+    font-size: 14px;
+    width: 100%;
+  }
+  .news__home_main .latest-newses, .news__home_main .popular-newses, .news__home_main .latest-newses {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+  .news__post-links {
+    padding: 0 10px;
+    overflow-x: scroll;
+  }
+  .news__post-links::-webkit-scrollbar {
+    display: none;
+  }
+  .news__home_main .form-container .form-group {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 

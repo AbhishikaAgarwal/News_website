@@ -24,6 +24,83 @@ section{
 a{
     color: inherit;
 }
+
+
+
+/*
+Subscribe Section
+*/
+.subscribe-wrapper{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,0.8);
+    z-index: 999;
+    .subscribe_container{
+        width:340px;
+        border-radius: 10px;
+        background:#fff;
+        padding:1rem;
+        position:relative;
+        animation: fade 0.3s ease-in forwards;
+        text-align: center;
+        font-family: 'Sansita Swashed', cursive;
+
+        .subscribe__image{
+            max-width: 220px;
+            width: 100%;
+            margin: 1rem auto;
+            overflow: hidden;
+
+            img{
+                display: flex;
+                object-fit: cover;
+                height: 80px;
+                margin: 0 auto;
+            }
+        }
+    }
+    .cross{
+        position:absolute;
+        top:0;
+        right:10px;
+        font-size:2em;
+        transform:rotate(45deg);
+        cursor:pointer;
+      }
+    
+      .subscribe_button{
+          border: 1px solid #111318;
+          padding: 0.4rem 1.5rem;
+          text-align:center;
+          border-radius: 8px;
+      }
+      .subscribe_btn-link{
+          background:rgb(56, 216, 56);
+          color:#111318;
+          text-transform: uppercase;
+          margin: 15px auto;
+          display: block;
+      }
+      @keyframes fade {
+          from{
+              transform: scale(0);
+          }
+          to{
+              transform: scale(1.2);
+          }
+      }
+}
+
+
+
 .header{
     min-height:20vh;
     overflow: hidden;
@@ -236,7 +313,8 @@ section.news__pinposts{
     background: rgba(255,255,255,0.4);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 5em;
+    
     grid-template-areas:
         "main-tranding main-tranding signup"
         "main-tranding main-tranding comment"
@@ -254,6 +332,7 @@ section.news__pinposts{
         justify-content: flex-end;
         align-items: flex-start;
         position: relative;
+
 
         .fas{
             position: absolute;
@@ -439,21 +518,39 @@ section.news__pinposts{
             }
     }
 }
-// @media screen and (max-width: 620px) {
-//     .news__home_main{
-//         width: 100%;
-//         grid-template-columns: 1fr;
-//         grid-gap: 1rem;
-//         grid-template-areas:
-//             "main-tranding" "
-//             signup"
-//             "popular"
-//             "comment"
-//             "latest"
-//             "tranding"
-//         ;
-//     }
-// }
+@media screen and (max-width: 620px) {
+    .news__home_main{
+        #tranding-news{
+
+            .bg-image{
+                // transform: scale(0.9);
+                background-size: cover;
+            }
+
+            .news-content h3{
+                font-size: 14px;
+                width: 100%;
+            }
+        }
+
+        .latest-newses,.popular-newses,.latest-newses{
+            max-width: 100vw;
+            overflow: hidden;
+        }
+    }
+
+    .news__post-links{
+        padding: 0 10px;
+        overflow-x: scroll;
+    }
+    .news__post-links::-webkit-scrollbar{
+        display: none;
+    }
+
+    .news__home_main .form-container .form-group{
+        justify-content: space-between;
+    }
+}
 
 .space{
     height: 100px;

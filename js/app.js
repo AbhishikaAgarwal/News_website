@@ -1,5 +1,26 @@
 
+//User Authentication
 
+let mystorage = window.localStorage;
+let isLoggedIn = mystorage.Subscribed;
+if(isLoggedIn){
+    let login_link = document.getElementById('login_user');
+    login_link.setAttribute('href','./index.html');
+    login_link.innerText ="Welcome "+mystorage.Username.split('@')[0];
+} 
+
+window.setTimeout(function(){
+    const cross = document.querySelector('.cross');
+    const parentWrapper = document.querySelector('.subscribe-wrapper');
+    console.log(mystorage.Subscribed);
+    if(!mystorage.Subscribed){
+        console.log(mystorage.Subscribed);
+        parentWrapper.style.display="flex";
+    }
+    cross.addEventListener('click',()=>{
+        parentWrapper.style.display="none";
+    });
+},10000);
 // Trending News :
 const trendingNewses = [
     {
