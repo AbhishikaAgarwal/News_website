@@ -1,4 +1,6 @@
 
+console.log("Call")
+setCurrentDate();
 //User Authentication
 
 let mystorage = window.localStorage;
@@ -108,4 +110,27 @@ const nextNews = ()=>{
 nextNews();
 document.onload = () =>{
     setTimeout(nextNews,200);
+}
+
+
+
+// Set current Date
+function setCurrentDate(){    
+    let weekdays = {
+        0:"Sunday",
+        1:"Monday",
+        2:"Tuesday",
+        3:"Wednesday",
+        4:"Thrusday",
+        5:"Friday",
+        6:"Saturday"
+    }
+    let currentDate = new Date();
+    let current_date = document.querySelector('.current_date');
+
+    let day = weekdays[currentDate.getDay()];
+    let date = currentDate.getDate()>9 ? currentDate.getDate() : '0'+currentDate.getDate();
+    let month = currentDate.getDate()>9 ? currentDate.getMonth() : '0'+currentDate.getMonth();
+    const today = `${day} - ${date}/${month}/${currentDate.getFullYear()}`; 
+    current_date.innerText = today;
 }
