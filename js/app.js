@@ -1,4 +1,57 @@
 
+//User Authentication
+
+let mystorage = window.localStorage;
+let isLoggedIn = mystorage.Subscribed;
+if(isLoggedIn){
+    let login_link = document.getElementById('login_user');
+    login_link.setAttribute('href','./index.html');
+    login_link.innerText ="Welcome "+mystorage.Username.split('@')[0];
+} 
+
+function showSubscribeWindow(){
+    const parentWrapper = document.querySelector('.subscribe-wrapper');
+    const subscribeContent = document.querySelector('.subscribe_content');
+    const cross = document.querySelector('.cross');
+
+    if(!mystorage.Subscribed){
+        console.log(mystorage.Subscribed);
+        parentWrapper.style.display="flex";
+    }else{
+        console.log("Already Subscribed");
+        parentWrapper.style.display="flex";
+        subscribeContent.innerHTML = `<h3>Already Subscribed, Enjoy Our service </h3>`    
+    }
+    cross.addEventListener('click',()=>{
+        parentWrapper.style.display="none";
+    });
+}
+
+window.setTimeout(function(){
+    const cross = document.querySelector('.cross');
+    const parentWrapper = document.querySelector('.subscribe-wrapper');
+    console.log(mystorage.Subscribed);
+    if(!mystorage.Subscribed){
+        console.log(mystorage.Subscribed);
+        parentWrapper.style.display="flex";
+    }
+    cross.addEventListener('click',()=>{
+        parentWrapper.style.display="none";
+    });
+},18000000);
+
+
+// Contact Us Pop-up window
+function showContactUsPage(){
+    console.log("Contact us");
+    const contactPage = document.querySelector('.contact_us-popup_wrapper');
+    contactPage.style.display="flex";
+}
+function closePopup(){
+    
+    const contactPage = document.querySelector('.contact_us-popup_wrapper');
+    contactPage.style.display="none";
+}
 
 // Trending News :
 const trendingNewses = [
