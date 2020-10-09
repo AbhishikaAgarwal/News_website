@@ -4,12 +4,27 @@ setCurrentDate();
 //User Authentication
 
 let mystorage = window.localStorage;
-let isLoggedIn = mystorage.Subscribed;
+let isLoggedIn = mystorage.Username==''?false : true;
 if(isLoggedIn){
     let login_link = document.getElementById('login_user');
     login_link.setAttribute('href','./index.html');
     login_link.innerText ="Welcome "+mystorage.Username.split('@')[0];
-} 
+
+    var li = document.createElement('li');
+    li.innerHTML = `<a href="./index.html">Logout</a>`;
+    li.classList.add('logout');
+    document.querySelector('.nav-links').appendChild(li);
+}
+
+if(isLoggedIn){
+    var logoutBtn = document.querySelector('.logout');
+logoutBtn.addEventListener('click',()=>{
+    mystorage.Username = '';
+    mystorage.Password = '';
+    window.location.href="./index.html";
+    logoutBtn.style.display="none";
+});
+}
 
 function showSubscribeWindow(){
     const parentWrapper = document.querySelector('.subscribe-wrapper');
@@ -93,17 +108,7 @@ const nextNews = ()=>{
         trendingNewsContent.childNodes[3].innerText = trendingNewses[currentNews].newsDate;
         currentNews = (currentNews+1)%trendingNewses.length;
 
-        // console.log(trendingNewsContent.childNodes[1].innerText);
-
-        // slides[current].classList.add("current-slide")
-        // trendingNews.onmouseover = () =>{
-        //     clearInterval(currentInterval);
-        //     console.log("Mouse Over");
-        // }
-        // trendingNews.onmouseout = () =>{
-        //     console.log("Mouse Out");
-        //     currentInterval = setInterval(nextNews,2000);
-        // }
+        
     }, 3000)
 }
 
@@ -130,7 +135,7 @@ function setCurrentDate(){
 
     let day = weekdays[currentDate.getDay()];
     let date = currentDate.getDate()>9 ? currentDate.getDate() : '0'+currentDate.getDate();
-    let month = currentDate.getDate()>9 ? currentDate.getMonth() : '0'+currentDate.getMonth();
+    let month = (currentDate.getMonth()+1)>9 ? currentDate.getMonth()+1 : '0'+currentDate.getMonth();
     const today = `${day} - ${date}/${month}/${currentDate.getFullYear()}`; 
     current_date.innerText = today;
 }
