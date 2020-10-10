@@ -374,6 +374,7 @@ nav {
   outline: none;
   padding: 0.4rem 1rem;
   background: transparent;
+  text-transform: capitalize;
   border: none;
   outline: none;
 }
@@ -517,6 +518,15 @@ section.news__pinposts .news__pin-posts_scrollar .pin_post {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+section.news__pinposts .news__pin-posts_scrollar .pin_post:hover {
+  -webkit-transform: scale3d(1.1, 1.1, 2.1);
+          transform: scale3d(1.1, 1.1, 2.1);
 }
 
 section.news__pinposts .news__pin-posts_scrollar .pin_post a, section.news__pinposts .news__pin-posts_scrollar .pin_post img {
@@ -562,74 +572,99 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
   -ms-grid-column-span: 2;
   grid-area: main-tranding;
   min-height: 400px;
+  background: rgba(0, 0, 0, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.news__home_main .news__home_main-tranding .fas {
-  position: absolute;
-  top: 50%;
-  margin: 1rem;
-  font-size: 2em;
-  color: #000;
-  cursor: pointer;
-}
-
-.news__home_main .news__home_main-tranding .fa-chevron-left {
-  left: 0;
-}
-
-.news__home_main .news__home_main-tranding .fa-chevron-right {
-  right: 0;
-}
-
-.news__home_main .news__home_main-tranding .bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("../src/news_img1.jpg");
+.news__home_main .news__home_main-tranding .news__image-wrapper {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-filter: opacity(1);
-          filter: opacity(1);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.news__home_main .news__home_main-tranding .news__post {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.news__home_main .news__home_main-tranding .current_news {
+  opacity: 1;
+}
+
+.news__home_main .news__home_main-tranding .news__post img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  max-height: 400px;
+  padding: 0;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
 }
 
 .news__home_main .news__home_main-tranding .news-content {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
   width: 100%;
+  color: #fff;
+  bottom: 0;
+  z-index: 100;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.news__home_main .news__home_main-tranding .news-content h3 {
-  width: 80%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: 'Open Sans',sans-serif;
-  margin: 13px 0 10px 0;
-  color: #FFFFFF;
-  font-size: 24px;
-  font-weight: 300;
 }
 
 .news__home_main .news__home_main-tranding .news-content small {
-  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0;
+}
+
+.news__home_main .news__home_main-tranding .buttons .fas {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 150;
+  color: #fff;
+}
+
+.news__home_main .news__home_main-tranding .buttons .fas:hover {
+  color: #000;
+}
+
+.news__home_main .news__home_main-tranding .buttons .fa-arrow-left {
+  left: 20px;
+  padding: 0.5rem;
+  background: #ff369770;
+}
+
+.news__home_main .news__home_main-tranding .buttons .fa-arrow-right {
+  right: 20px;
+  padding: 0.5rem;
+  background: #ff369770;
 }
 
 .news__home_main .ad-container {

@@ -1,5 +1,4 @@
-
-console.log("Call")
+// console.log("Call")
 setCurrentDate();
 //User Authentication
 
@@ -18,7 +17,7 @@ if(isLoggedIn){
 
 if(isLoggedIn){
     var logoutBtn = document.querySelector('.logout');
-logoutBtn.addEventListener('click',()=>{
+    logoutBtn.addEventListener('click',()=>{
     mystorage.Username = '';
     mystorage.Password = '';
     window.location.href="./index.html";
@@ -71,51 +70,47 @@ function closePopup(){
 }
 
 // Trending News :
-const trendingNewses = [
-    {
-        imageUrl : "../src/img1.jpg",
-        newsHeading :"Image for What went right this week: animal welfare, plastic progress and more positive news What went right this week: animal welfare, plastic progress and more positive news",
-        newsDate : "Friday, 02 October 2020"
-    },
-    {
-        imageUrl : "../src/img2.jpg",
-        newsHeading :"Image for Growing back to school: one charity’s plan to encourage outdoor educationGrowing back to school: one charity's plan to encourage outdoor education",
-        newsDate : "Friday, 03 October 2020"
-    },
-    {
-        imageUrl : "../src/img3.jpg",
-        newsHeading :"Why children, as well as adults, need stories about solutions",
-        newsDate : "Friday, 04 October 2020"
-    },
-    {
-        imageUrl : "../src/img4.jpg",
-        newsHeading :"How an alliance of female leaders is helping close the gender gap",
-        newsDate : "Friday, 04 October 2020"
+
+const allNewses = document.querySelectorAll('.news__post');
+let maxNews= allNewses.length;
+let currentNewsIndex = 0;
+
+let next = document.querySelector('.buttons #btn-next');
+let prev = document.querySelector('.buttons #btn-prev');
+
+const intervalId = window.setInterval(()=>{
+    allNewses[currentNewsIndex].classList.remove('current_news'); 
+    currentNewsIndex = (currentNewsIndex+1)%maxNews;
+    allNewses[currentNewsIndex].classList.add('current_news');
+},4000);
+
+
+const nextNews = () => {
+    console.log('Next News')
+    const current_news = document.querySelector(".current_news");
+    current_news.classList.remove("current_news");
+    currentNewsIndex = (currentNewsIndex + 1) % maxNews;
+    allNewses[currentNewsIndex].classList.add("current_news");
+}
+
+const previouNews = () => {
+    console.log('Previous News')
+
+    const curren_news = document.querySelector(".current_news");
+    curren_news.classList.remove("current_news");
+
+    if (currentNewsIndex == 0) {
+        currentNewsIndex = maxNews - 1;
+    } else {
+        currentNewsIndex--;
     }
-]
-let currentInterval;
-const trendingNews = document.getElementById('tranding-news');
-const trendingNewsContent = document.getElementById('trending-news-content');
-const bgImage = document.querySelector('.bg-image');
-let currentNews = 0;
 
-console.log(trendingNewsContent.childNodes[1].innerText);
-const nextNews = ()=>{
-    
-    currentInterval = setInterval(() => {
-        bgImage.style.backgroundImage = `url(${trendingNewses[currentNews].imageUrl})`;  
-        trendingNewsContent.childNodes[1].innerText = trendingNewses[currentNews].newsHeading;
-        trendingNewsContent.childNodes[3].innerText = trendingNewses[currentNews].newsDate;
-        currentNews = (currentNews+1)%trendingNewses.length;
-
-        
-    }, 3000)
+    allNewses[currentNewsIndex].classList.add("current-slide");
 }
 
-nextNews();
-document.onload = () =>{
-    setTimeout(nextNews,200);
-}
+next.addEventListener("click", nextNews);
+prev.addEventListener("click", previouNews);
+
 
 
 
@@ -131,11 +126,13 @@ function setCurrentDate(){
         6:"Saturday"
     }
     let currentDate = new Date();
-    let current_date = document.querySelector('.current_date');
+    let current_date = document.querySelectorAll('.current_date');
 
     let day = weekdays[currentDate.getDay()];
     let date = currentDate.getDate()>9 ? currentDate.getDate() : '0'+currentDate.getDate();
     let month = (currentDate.getMonth()+1)>9 ? currentDate.getMonth()+1 : '0'+currentDate.getMonth();
     const today = `${day} - ${date}/${month}/${currentDate.getFullYear()}`; 
-    current_date.innerText = today;
+    current_date.forEach(element => {
+        element.innerText=today;
+    });
 }

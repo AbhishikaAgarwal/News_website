@@ -286,10 +286,12 @@ nav{
             border: 2px solid rgba(255,255,255,0.8);
             border-radius: 7px;
             transition: border 0.3s ease-in;
+
             input.search{
                 outline: none;
                 padding: 0.4rem 1rem;
                 background: transparent;
+                text-transform: capitalize;
                 border: none;
                 outline: none;    
             }
@@ -402,7 +404,10 @@ section.news__pinposts{
             justify-content: start;
             align-items: flex-end;
             position: relative;
-            
+            transition: transform 0.3s ease-in-out;
+            &:hover{
+                transform: scale3d(1.1,1.1,2.1);
+            }
             a,img{
                 position: absolute;
                 width: 100%;
@@ -451,61 +456,77 @@ section.news__pinposts{
         grid-area: main-tranding;
         min-height: 400px;
         // padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        position: relative;
+        background:rgba(0,0,0,0.7);
+        display:flex;
+        justify-content:center;
+        align-items:center;
 
+          .news__image-wrapper{
+            height:100%;
+            width:100%;
+            overflow:hidden;
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+          }
+          .news__post{
+            position:absolute;
+            opacity:0;
+            overflow:hidden;
+            transition:opacity 0.4s ease-in-out;
 
-        .fas{
-            position: absolute;
-            top: 50%;
-            // transform: translateY(-50%);
-            margin: 1rem;
-            font-size: 2em;
-            color: #000;
-            cursor: pointer;
-        }
-        .fa-chevron-left{
-            left: 0;
-        }
-        .fa-chevron-right{
-            right: 0;
-        }
-        .bg-image{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('../src/news_img1.jpg');
-            overflow: hidden;
-            z-index: -1;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            filter: opacity(1);
-        }
-        .news-content{
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(0,0,0,0.5);
+          }
+          .current_news{
+            opacity:1;
+          }
+          .news__post img{
             
-            h3{
-                width: 80%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                font-family: 'Open Sans',sans-serif;
-                margin: 13px 0 10px 0;
-                color: #FFFFFF;
-                font-size: 24px;
-                font-weight: 300;
-            }
+            object-fit:cover;
+            width: 100%;
+            max-height: 400px;
+            padding: 0;
+            filter: blur(1px);
+          }
+          .news-content{
+            background:rgba(0,0,0,0.8);
+            position:absolute;
+            width:100%;
+            color:#fff;
+            bottom:0;
+            z-index:100;
+            padding:10px;
+
             small{
-                font-size: 10px;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
             }
-        }
+          }
+          .buttons{
+              .fas{
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  z-index: 150;
+                  color: #fff;
+
+                  &:hover{
+                      color: #000;
+                  }
+              }
+              .fa-arrow-left{
+                    left: 20px;
+                    padding:0.5rem; 
+                    background:#ff369770;
+              }
+              .fa-arrow-right{
+                right: 20px;        
+                padding:0.5rem;
+                background:#ff369770;
+              }
+          }        
+    
     }
     .ad-container{
         grid-area: ad1;
