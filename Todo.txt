@@ -6,7 +6,7 @@
 
 1) When a particular language is selected, then all the news should appear in that particular language.     
 For now u can take a bunch of sample news for each category and make that basic framework.  
-2) Make a sample about page as well. We'll change its content later. But for now, a sample about page is also required.
+2) Make a sample about page as well. We'll change its content later. But for now, a sample about page is also required. 👍
 3) Add LinkedIn also with other social media handles.   👍
 4) Give a little border radius to the search bar to make it look a little better.   👍
 5) Change news positive to " The Times of The World "   👍
@@ -23,3 +23,5 @@ For now u can take a bunch of sample news for each category and make that basic 
 13) And in each category, only 4 headlines with a 5th option as other should come and on clicking on other, all the news related to that category should come.      👍
 
 14)Logout option when user logged in    👍
+
+.
