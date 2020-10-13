@@ -102,7 +102,6 @@ header ul {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
-  border-bottom: 2px solid #fc00ff;
 }
 
 header ul li {
