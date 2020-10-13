@@ -23,7 +23,7 @@
 nav{
   padding:0 1rem;
   display:flex;
-  min-height:60px;
+  min-height:70px;
   justify-content:space-between;
   align-items:center;
   border-bottom:2px solid #2BC0E4;
@@ -40,6 +40,18 @@ nav{
        
      }
    }
+}
+.logo{
+  h1{
+    text-align:center;
+    text-transform:capitalize;
+    letter-spacing: 2px;
+    font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+    font-weight:bolder;
+    span{
+      color:#fc00ff;
+    }
+  }
 }
 
 .social-media-icons{
@@ -69,24 +81,6 @@ nav{
 }
 
 header{
-  
-  .header-contetn{
-    min-height:20vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:1em 0 0;
-    h1{
-      text-align:center;
-      text-transform:capitalize;
-      letter-spacing: 2px;
-      font-size: clamp(1.8rem, 2.5vw, 2.8rem);
-      font-weight:bolder;
-      span{
-        color:#fc00ff;
-      }
-    }
-  }
   
   // padding:1rem;
   ul{

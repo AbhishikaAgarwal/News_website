@@ -29,6 +29,11 @@ a {
   color: inherit;
 }
 
+small {
+  font-size: 10.5px;
+  margin: 10px 0;
+}
+
 /*
 Subscribe Section
 */
@@ -291,11 +296,11 @@ nav {
   }
 }
 
-.navbar .days li i {
+.navbar .social_media-icons li i {
   font-size: 24px;
 }
 
-.navbar .days li:not :last-of-type {
+.navbar .social_media-icons li:not :last-of-type {
   border-right: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -759,6 +764,7 @@ section.news__pinposts .news__pin-posts_scrollar::-webkit-scrollbar {
   background-color: #333131;
   -webkit-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
+  cursor: pointer;
 }
 
 .news__home_main .more-btn:hover {

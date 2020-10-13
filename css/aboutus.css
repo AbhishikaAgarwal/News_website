@@ -27,7 +27,7 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 60px;
+  min-height: 70px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -52,6 +52,18 @@ nav ul li {
   padding: 5px 12px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.logo h1 {
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-weight: bolder;
+}
+
+.logo h1 span {
+  color: #fc00ff;
 }
 
 .social-media-icons {
@@ -83,32 +95,6 @@ nav ul li {
 
 .social-media-icons li:nth-last-of-type(1) {
   border: none;
-}
-
-header .header-contetn {
-  min-height: 20vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 1em 0 0;
-}
-
-header .header-contetn h1 {
-  text-align: center;
-  text-transform: capitalize;
-  letter-spacing: 2px;
-  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
-  font-weight: bolder;
-}
-
-header .header-contetn h1 span {
-  color: #fc00ff;
 }
 
 header ul {

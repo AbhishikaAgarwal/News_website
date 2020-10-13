@@ -24,7 +24,10 @@ section{
 a{
     color: inherit;
 }
-
+small{
+    font-size:10.5px;
+    margin: 10px 0;
+}
 
 
 /*
@@ -233,7 +236,7 @@ nav{
     }
 }
 .navbar {
-    .days{
+    .social_media-icons{
         li i{
             font-size: 24px;
         }
@@ -588,7 +591,7 @@ section.news__pinposts{
         color: #fff;
         background-color: #333131;
         transition: background-color 0.2s ease-in;
-
+        cursor: pointer;
         &:hover{
             background-color: #161616;
         }
