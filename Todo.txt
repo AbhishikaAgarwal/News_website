@@ -26,3 +26,4 @@ For now u can take a bunch of sample news for each category and make that basic 
 14)Logout option when user logged in    👍
 
 .
+Everything is up to date
