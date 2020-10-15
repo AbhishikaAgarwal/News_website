@@ -1,13 +1,29 @@
-1 . In category section : 6 in each page 
-2 . A left arrow to move next list of category
+1 . In category section : 6 in each page    👍
+2 . A right arrow to move next list of categories  👍
+3 . Above actions should be Responsive  👍
 
+09-10-2020
 
-->instead of giving that name, email and submit option, we can give that in subscribe pop up..  👍
-And that place can be used for any advertisement..  👍
+1) When a particular language is selected, then all the news should appear in that particular language.     
+For now u can take a bunch of sample news for each category and make that basic framework.  
+2) Make a sample about page as well. We'll change its content later. But for now, a sample about page is also required. 👍
+3) Add LinkedIn also with other social media handles.   👍
+4) Give a little border radius to the search bar to make it look a little better.   👍
+5) Change news positive to " The Times of The World "   👍
+6) Try to use some function which adjusts the day and date according to the current day and date. If that's not possible now, then just remove that day and date.   👍
 
--> replace that name, email and submit section with an advertisement        👍
--> Make a pop-up for subscribe  👍
+7) And below news positive, there are some categories like International, Teen, Sports and all, just take a bunch of news for each category and make a separate web page for all of them.  👍
 
+8) And instead of this news heading from Rajasthan, take different pictures which can be from any of the sample news u took for point  and make them such that on clicking on a particular image, information related to that news should appear in a separate web page.   👍
 
--> Replace that message section to a advertisement , and make it pop-up form    👍
--> Make a pop-up on clicking on the contact us-page  👍
+9) Same goes with the auto-animation news as well. Once the user click on the image, news related to that image should come. 👍
+10) Take 2 different advertisements.    👍
+
+11) From the news u took for point 7, pick up some latest , popular and trending news and place them in their respective categories in latest, popular and trending.    👍
+12) And for each category again the same, news should come on clicking on a particular headline.
+13) And in each category, only 4 headlines with a 5th option as other should come and on clicking on other, all the news related to that category should come.      👍
+
+14)Logout option when user logged in    👍
+
+.
+Everything is up to date
